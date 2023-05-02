@@ -1,0 +1,32 @@
+{
+    "description": "Adds useful helpers for Gitlab code reviews.",
+    "manifest_version": 2,
+    "name": "GitlabMadeEasy",
+    "version": "1.0",
+    "icons": {
+        "48": "icons/ic_gitlab_made_easy_48.png",
+        "96": "icons/ic_gitlab_made_easy_96.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*/merge_requests/*"
+            ],
+            "js": [
+                "js/jquery-3.6.4.min.js",
+                "js/gitlabCodeReviewHelper.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://*/*/merge_requests",
+                "https://*/*/merge_requests?*"
+            ],
+            "js": [
+                "js/jquery-3.6.4.min.js",
+                "js/gitlabListOfMrHelper.js"
+            ]
+        }
+
+    ]
+}
